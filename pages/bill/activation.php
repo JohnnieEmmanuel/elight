@@ -14,7 +14,7 @@
     if (isset($_SESSION['loggedIn_user_id'])) {
         $id = $_SESSION['loggedIn_user_id'];
 		$email = $_SESSION['loggedIn_user_email'];
-
+        global $invalid;
         $sql1 = "SELECT * FROM users WHERE id=".$id;
         $result1 = $conn->query($sql1);
         $row1 = $result1->fetch_assoc();
@@ -32,6 +32,7 @@
                    else{
             echo '<script >console.log("invalid activation key")</script>';
             echo '<script >alert ("Invalid reference or activation key:(");  </script>';
+           
             $invalid = "true";
             
                    }
@@ -72,7 +73,7 @@
             text-align: center;
         }
         .m-top{
-            margin-top: 8%;
+            margin-top: 10%;
         }
     </style>
 </head>
@@ -199,7 +200,7 @@
             <nav class="sidebar sidebar-offcanvas" id="sidebar">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="home.php">
+                        <a class="nav-link" href="../dashboard/home.php">
                             <i class="mdi mdi-home menu-icon"></i>
                             <span class="menu-title">Dashboard</span>
                         </a>
