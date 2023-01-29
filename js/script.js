@@ -25,7 +25,6 @@ var fee_w = document.getElementById('fee_warning');
 
 fee_w.style.display = "none";
 
-c(Math.floor(100000 + Math.random() * 900000));
 
 function total(){
   if(amount.value === ""){
@@ -45,7 +44,7 @@ aw.style.display="none";
 
 function payWithPaystack(){
   
-  if(amount.value >= 10 && amount.value != 0){
+  if(amount.value >= 500 && amount.value != 0){
     let t_plan = parseFloat(tariff[tf]);
     let amountToPay = parseFloat(amount.value);
    
